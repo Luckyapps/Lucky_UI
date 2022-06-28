@@ -1,0 +1,35 @@
+html{
+    background: url(media/wallpaper.png) no-repeat center center fixed; 
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /*font-family: calibri;*/
+  }
+
+body{
+    margin:0;
+}
+
+/*IF SCREEN SIZE*/
+@media screen and (max-width: 650px) {
+
+}
+
+#compatibility_mode{
+  position: fixed;
+  z-index: 999;
+  left: 10px;
+  bottom: 10px;
+  font-family: calibri;
+  color: white;
+  background-color: #1e0000d4;
+  font-weight: bold;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  #compatibility_mode{
+      display: none;
+  }
+}

@@ -1,0 +1,16 @@
+html{
+    background: url(media/wallpaper.png) no-repeat center center fixed; 
+    background-size: cover;
+    background-attachment: fixed;
+    /*font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;*/
+    font-family: calibri;
+  }
+
+body{
+    margin:0;
+}
+
+/*IF SCREEN SIZE*/
+@media screen and (max-width: 650px) {
+
+}

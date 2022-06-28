@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <html lang="de-de">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png"> <!-- Apple App icon 
+    <link rel="icon" href="media/Ahorn_Logo_Final_RESIZE.png" type="image/png">-->
+    <meta name="theme-color" content="black"/> <!-- Theme color -->
+    <link rel="manifest" href="manifest.json">  <!--Webapp manifest -->
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Put your description here."><!-- Beschreibung der Seite für die Google Suche-->
+    <title>Lucky UI</title>  <!-- Tab titel -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/version_history.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/titlebar.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/content.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/error.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/sidecard.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/cookies.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/darkmode.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="style.js"></script>
+    <script src="stylesheets/version_history.js"></script>
+    <script src="stylesheets/titlebar.js"></script>
+    <script src="stylesheets/content.js"></script>
+    <script src="stylesheets/error.js"></script>
+    <script src="stylesheets/sidecard.js"></script>
+    <script src="stylesheets/cookies.js"></script>
+    <script src="stylesheets/darkmode.js"></script>
+
+    <div id="blende"></div><!--Blende-->
+
+    <!--Titlebar-->
+    <div id="titlebar">
+        <a href="">Home</a>
+        <a href="">Seite1</a>
+        <img src="media/logo.png"></img>
+        <a href="">Seite2</a>
+        <a href="">Seite3</a>
+    </div>
+    <div id="settings">
+      <img id="darkmode_button" src="media/Theme_Symbol.png"></img><!--Darkmode-->
+    </div>
+
+    <!--Sidecard-->
+    <img src="media/burger.svg" class="sidecard_but"></img>
+    <div class="sidecard">
+        <div class="sidecard_but_close">X</div>
+        <img src="media/logo.png"></img>
+        <a href="">Quellen</a>
+        <a href="">Impressum</a>
+        <a href="">Hinweise</a>
+        <a href="">Statistik</a>
+      </div>
+
+    <!--Content-->
+    <div id="content">
+        <div class="card card_100">
+            <h2>Card</h2>
+            <p>aöslkdfjaösioejrföasldkjföalsidjrföaisejfdöl aösldkfj asdlf kjasdlöff kjasdf lkjasödokf jöalskdjf öalskdjf  d</p>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+            <p>Dies ist ein Testlink: <a href="#content">Testlink.de</a></p>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+            <button onclick="flyin_open('Test');">FLYIN</button>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+    </div>
+    
+    <!--Error-->
+    <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
+
+    <!--Version_History and Watermark-->
+    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22031.0</div>
+    <div id="version_history_grid_container">
+      <div id="version_history_container" class="version_history_closed_FIRST">
+        <h2>Versionen:</h2>
+        <div>
+          <h3>dvc.1.22031.1</h3>
+          <ul>
+            <li>Es wurde ein Fehler behoben, der verhinderte das Flyin über einen Button zu öffnen.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22025.0</h3>
+          <ul>
+            <li>Cookie-Fenster hinzugefügt.</li>
+            <li>Funktionalität zur erweiterten info im Versionsinformationsfensters hinzugefügt.</li>
+            <li>Flyin schließt nicht mehr, wenn man auf die Titlebar oder die Settings klickt.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22024.0</h3>
+          <ul>
+            <li>Kompatibilitätsmodus für Firefox hinzugefügt.<ul><li>In Firefox funktioniert der blur effekt nicht, ohne das der Nutzer ihn manuell akitviert.</li><li>Im Kompatibilitätsmodus sind die Hintergrundfarben anders.</li><li>Eine Anzeige für den Kompatibilitätsmodus wurde hinzugefügt.</li></ul></li>
+            <li>Grundlegende Webapp funktionalität hinzugefügt.<ul><li>Ermöglicht die Nutztung der Anwendung als eigenständige (Desktop)app.</li></ul></li>
+            <li>Grundlegende Darkmode funktionalität hinzugefügt.</li>
+            <li>Hinzufügen eines personalisierten Flyin-Fensters möglich.<ul><li>JS-Befehl: flyin_open([content]) --> [content] sollte HTML als String sein</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dvc.1.22023.1</h3>
+          <ul>
+            <li>Es wurde ein Fehler behoben durch den der Hintergrundeffekt nicht funktioniert hat.</li>
+            <li>Codeverbesserungen in Timeoutfunktionen von version_history und error_show (Timeoutwerte müssen nicht mehr manuel eingegeben werden)</li>
+            <li>Es gibt eine Animation, wenn man auf die Versionsnummer klickt.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22023.0</h3>
+          <ul>
+            <li>Es wird ein Tooltip angezeigt, wenn man die Maus über die Versionsnummer bewegt.</li>
+            <li>Designanpassungen:<ul><li>Das Versionsinformationsfenster hat nun einen Schatten um einen 3D-Effekt zu erzeugen.</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22022.0:</h3>
+          <ul>
+            <li>Codeverbesserung:<ul><li>Der Code wurde auf mehrer Stylesheets und JSs verteilt.<ul><li>-->Einzelne Elemente des Codes lassen sich jetzt einfacher, getrennt, in anderen Projekten nutzen.</li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22021.2:</h3>
+          <ul>
+            <li>Wenn man neben das Versionsinformationsfenster klickt, schließt es sich.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22021.1:</h3>
+          <ul>
+            <li>Versionsinformationen hinzugefügt:<ul><li>(Diese Liste)</li></ul></li>
+          </ul>
+        </div>
+        <div id="version_history_toolbar">
+          <div style="cursor:help" id="version_history_info_open">?</div>
+          <div id="version_history_close">X</div>
+        </div>
+      </div>
+    </div>
+
+    <!--Kompatibilitätsmodus-->
+    <div id="compatibility_mode">Kompatibilitätsmodus</div>
+
+    <!--cookies-->
+    <div class="cookie_container_hide" id="cookie_container">
+      <div  id="cookie_content">
+        <h3>Cookies</h3>
+        <div>Bei Nutzung der Website stimmen Sie zu, dass die Website notwendige technische Nutzerdaten (z.B. Darkmode-Einstellungen, Cookieauswahl) lokal im Browser speichert.</div>
+        <div id="cookie_selection">
+          <div id="cookies_close" onclick="cookie_content_close()">Fortfahren</div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <!--Version_history_info_content-->
+    <div id="vers-hist-info-cont" style="display: none;">
+      <h2>Versionsinformation</h2>
+      <pre>---------------AHORN----------------
+        ------------------------------------
+        Versionsnummern:
+        
+        VN.X.Y.Z
+        
+        Versionsnamen(VN):
+        
+        v: stable version
+        bv: beta version
+        av: alpha version
+        dv: development version
+        dvc: development verison current (under construction, no further information available)
+        
+        Hauptversionsnummer(X):
+        
+        Große Funktions/Designänderungen (z.B.: neues UI, neuer Aufbau)
+        
+        Buildnummern(Y):
+        ->Aufbau: JahrMonatNummer (z.B.: 22011)
+        
+        kleinere Änderungen in der Hauptversion (z.B.: kleine Designänderungen, verbesserungen im Code)
+        
+        Fixnummer(Z):
+        
+        Fixes von kleinen Bugs und Fehlerbehebungen
+        
+        
+        ------------------------------------
+        --------------Versionen-------------
+        ------------------------------------
+        bv.1.22024.2:
+        --> 
+        ------------------------------------
+        bv.1.22022.1:
+        --> Versionsnummern und Erläuterungen hinzugefügt.
+        ------------------------------------
+        </pre>
+    </div>
+
+  </body>
+</html>
