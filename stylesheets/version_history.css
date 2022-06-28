@@ -30,6 +30,8 @@
     height: 100%;
     /*overflow: auto;*/
     align-items: start;
+    z-index: 999;
+    background-color: #00000061;
 }
 
 #version_history_container{
@@ -50,6 +52,28 @@
     position:relative;
     z-index: 930;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.version_history_grid_container_open{
+    background-color: #00000061;
+    animation-name: vers_hist_grid_cont_open_ani;
+    animation-duration: 1s;
+}
+
+.version_history_grid_container_close{
+    background-color: transparent;
+    animation-name: vers_hist_grid_cont_close_ani;
+    animation-duration: 1s;
+}
+
+@keyframes vers_hist_grid_cont_open_ani {
+    0%{background-color: transparent;}
+    100%{background-color: #00000061;}
+}
+
+@keyframes vers_hist_grid_cont_close_ani {
+    0%{background-color: #00000061;}
+    100%{background-color: transparent;}
 }
 
 #version_history_toolbar{

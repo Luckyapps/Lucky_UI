@@ -18,6 +18,7 @@
     <link href="stylesheets/sidecard.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/cookies.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/darkmode.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/update_notification/update_notification.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="style.js"></script>
@@ -28,6 +29,8 @@
     <script src="stylesheets/sidecard.js"></script>
     <script src="stylesheets/cookies.js"></script>
     <script src="stylesheets/darkmode.js"></script>
+    <script src="stylesheets/update_notification/update_notification.js"></script>
+    <script src="stylesheets/update_notification/updatelist.js"></script>
 
     <div id="blende"></div><!--Blende-->
 
@@ -83,12 +86,20 @@
     <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
 
     <!--Version_History and Watermark-->
-    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22031.0</div>
+    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22061.0</div>
     <div id="version_history_grid_container">
       <div id="version_history_container" class="version_history_closed_FIRST">
         <h2>Versionen:</h2>
         <div>
-          <h3>dvc.1.22031.1</h3>
+          <h3>dvc.1.22061.0</h3>
+          <ul>
+            <li>Lucky_UI wurde auf Github verschoben, die aktuelle Version befindet sich nun dort.</li>
+            <li>version_history wurde aktualisiert: <ul><li>Es gibt nun einen Hintergrundeffekt, um das Fenster besser abzuheben.</li></ul></li>
+            <li>updat_notification wurde hinzugefügt: <ul><li>Es gibt nun ein Fenster, welches anzeigt, wenn es ein Update gab.</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22031.1</h3>
           <ul>
             <li>Es wurde ein Fehler behoben, der verhinderte das Flyin über einen Button zu öffnen.</li>
           </ul>
@@ -152,6 +163,18 @@
 
     <!--Kompatibilitätsmodus-->
     <div id="compatibility_mode">Kompatibilitätsmodus</div>
+
+    <!--Update_Notifications-->
+    <div id="update_notification" class="u_n_first_closed">
+      <div id="update_notification_container">
+        <div id="update_notification_toolbar">
+          <div id="update_notification_title">TITEL</div>
+          <div id="update_notification_close">X</div>
+        </div>
+        <div id="update_notification_content">
+        </div>
+      </div>
+    </div>
 
     <!--cookies-->
     <div class="cookie_container_hide" id="cookie_container">
