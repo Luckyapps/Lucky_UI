@@ -10,4 +10,5 @@ function load_style(){
     load_sidecard_stylesheet();
     load_cookie_stylesheet();
     load_darkmode_stylesheet();
+    load_update_notification_stylesheet();
 }

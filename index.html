@@ -18,6 +18,7 @@
     <link href="stylesheets/sidecard.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/cookies.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/darkmode.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/update_notification/update_notification.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="style.js"></script>
@@ -28,13 +29,15 @@
     <script src="stylesheets/sidecard.js"></script>
     <script src="stylesheets/cookies.js"></script>
     <script src="stylesheets/darkmode.js"></script>
+    <script src="stylesheets/update_notification/update_notification.js"></script>
+    <script src="stylesheets/update_notification/updatelist.js"></script>
 
     <div id="blende"></div><!--Blende-->
 
     <!--Titlebar-->
     <div id="titlebar">
         <a href="">Home</a>
-        <a href="">Seite1</a>
+        <a href="pages/scroll.html">Scroll</a>
         <img src="media/logo.png"></img>
         <a href="">Seite2</a>
         <a href="">Seite3</a>
@@ -48,8 +51,8 @@
     <div class="sidecard">
         <div class="sidecard_but_close">X</div>
         <img src="media/logo.png"></img>
-        <a href="">Quellen</a>
-        <a href="">Impressum</a>
+        <a href="">Home</a>
+        <a href="pages/scroll.html">Scroll</a>
         <a href="">Hinweise</a>
         <a href="">Statistik</a>
       </div>
@@ -57,25 +60,43 @@
     <!--Content-->
     <div id="content">
         <div class="card card_100">
-            <h2>Card</h2>
-            <p>aöslkdfjaösioejrföasldkjföalsidjrföaisejfdöl aösldkfj asdlf kjasdlöff kjasdf lkjasödokf jöalskdjf öalskdjf  d</p>
+            <h2>Willkommen bei Lucky_UI</h2>
+            <p>Lucky_UI ist eine modulare Websitevorlage. Das heißt, sie ist modular aufgebaut, sodass einzelne Funktionen unabhängig von einander genutzt/kopiert werden können.</p>
         </div>
         <div class="card">
-            <h2>Card</h2>
+            <h2>Lucky_UI Core</h2>
+            <p>Das Grundgerüst von Lucky_UI. Es wird benötigt, wenn eine Website komplett mit Lucky_UI genutzt werden soll.<br><br><b>Enthaltene Elemente:</b><li>style.css</li><li>style.js</li></p>
+        </div>
+        <div class="card">
+            <h2>Content</h2>
+            <p>Das Content-Modul wird für das Carddesign benötigt. Es ist für die Darstellung des Seiteninhalts verantwortlich.</p>
+        </div>
+        <div class="card">
+            <h2>Titlebar</h2>
+            <p>Die Titelleiste, inklusive der enthaltenen Einstellungsleiste z.B für den Darkmode. Es wird empfohlen bei Nutzung der Titelleiste auch die Sidebar zu implementieren.</p>
+        </div>
+        <div class="card">
+            <h2>Sidebar</h2>
+            <p>Zeigt die Links der Titelleiste in einer ausklappbaren Sidebar an, wenn die Seite auf Smartphones angezeigt wird.</p>
+        </div>
+        <div class="card">
+          <h2>Darkmode</h2>
+          <p>Die integration des Darkmodes. Um ihn aktivieren zu können muss entweder die Titlebar genutzt oder ein eigener Knopf implementiert werden.</p>
+        </div>
+        <div class="card">
+          <h2>Cookies</h2>
+          <p>Zeigt ein Cookiefenster, welches bestätigt werden muss, bevor die Seite genutzt werden kann.</p>
+          <p>Fenster anzeigen: <button onclick="cookie_container.classList = 'cookie_container_open';">Hier drücken</button></p>
+        </div>
+        <div class="card">
+          <h2>Error Benachrichtigung</h2>
+          <p>Ein Benachrichtigungsfenster, dessen Inhalt selbst frei gewählt werden kann.</p>
+          <p>Errorbenachrichtigung anzeigen: <button onclick="error_show('Dies ist das Errorfenster.')">Hier drücken</button></p>
+        </div>
+        <div class="card">
+            <h2>Version History</h2>
             <p>Dies ist ein Testlink: <a href="#content">Testlink.de</a></p>
-        </div>
-        <div class="card">
-            <h2>Card</h2>
             <button onclick="flyin_open('Test');">FLYIN</button>
-        </div>
-        <div class="card">
-            <h2>Card</h2>
-        </div>
-        <div class="card">
-            <h2>Card</h2>
-        </div>
-        <div class="card">
-            <h2>Card</h2>
         </div>
     </div>
     
@@ -83,12 +104,28 @@
     <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
 
     <!--Version_History and Watermark-->
-    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22031.0</div>
+    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22062.0</div>
     <div id="version_history_grid_container">
       <div id="version_history_container" class="version_history_closed_FIRST">
         <h2>Versionen:</h2>
         <div>
-          <h3>dvc.1.22031.1</h3>
+          <h3>dvc.1.22062.0</h3>
+          <ul>
+            <li>Die Startseite wurde mit Erläuterungen zu Lucky_UI ergänzt.</li>
+            <li>Designanpassungen: <ul><li>Errorbenachrichtigung: <ul><li>Kollision mit watermark in der mobilen Ansicht behoben.</li><li>Fehler behoben durch den die Benachrichtigung mitgescrollt ist.</li></ul></li></ul></li>
+            <li>Neuer Abschnitt: Scroll <ul><li>Bei Scroll handelt es sich um eine sehr experimentelle Entwicklung eines Scrollresponsive Designs.</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22061.0</h3>
+          <ul>
+            <li>Lucky_UI wurde auf Github verschoben, die aktuelle Version befindet sich nun dort.</li>
+            <li>version_history wurde aktualisiert: <ul><li>Es gibt nun einen Hintergrundeffekt, um das Fenster besser abzuheben.</li></ul></li>
+            <li>updat_notification wurde hinzugefügt: <ul><li>Es gibt nun ein Fenster, welches anzeigt, wenn es ein Update gab.</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22031.1</h3>
           <ul>
             <li>Es wurde ein Fehler behoben, der verhinderte das Flyin über einen Button zu öffnen.</li>
           </ul>
@@ -152,6 +189,18 @@
 
     <!--Kompatibilitätsmodus-->
     <div id="compatibility_mode">Kompatibilitätsmodus</div>
+
+    <!--Update_Notifications-->
+    <div id="update_notification" class="u_n_first_closed">
+      <div id="update_notification_container">
+        <div id="update_notification_toolbar">
+          <div id="update_notification_title">TITEL</div>
+          <div id="update_notification_close">X</div>
+        </div>
+        <div id="update_notification_content">
+        </div>
+      </div>
+    </div>
 
     <!--cookies-->
     <div class="cookie_container_hide" id="cookie_container">

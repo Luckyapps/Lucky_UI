@@ -39,7 +39,7 @@ function window_clicked(e){
 function flyin_open(content, type){ //Öffnen eines Flyin-Fensters: flyin_open([content]) --> [content] muss html als String sein
   flyin = true;
   if(version_history_container.classList.contains("version_history_opened")){//Experimentell: Wenn schon geöffnet
-    flyin_close("flyin", content, type);
+    flyin_close("flyin", content, type, "newflyin");
   }else{
     if(type == "info"){
       version_history_container.innerHTML = content +"<div id='version_history_toolbar'><div id='version_history_close'>X</div></div>"; //Experimentell
@@ -54,6 +54,7 @@ function flyin_open(content, type){ //Öffnen eines Flyin-Fensters: flyin_open([
       //version_history_info_button.addEventListener("click", version_history_info_open); //Experimentell: muss neu definiert werden
     }
     version_history_grid_container.style.display = "grid";
+    version_history_grid_container.classList = "version_history_grid_container_open";
     body.style.overflow = "hidden";
     version_history_container.classList = "";
     version_history_container.classList.add("version_history_opened");
@@ -66,9 +67,10 @@ function flyin_open(content, type){ //Öffnen eines Flyin-Fensters: flyin_open([
   } 
 }
 
-function flyin_close(origin, content, type){
+function flyin_close(origin, content, type, reason){
   body.style.overflow = "unset";
   version_history_grid_container.style.overflow = "hidden";
+  version_history_grid_container.classList = "version_history_grid_container_close";
   version_history_container.classList = "";
   version_history_container.classList.add("version_history_closed");
 
@@ -77,7 +79,7 @@ function flyin_close(origin, content, type){
     version_history_grid_container.style.display = "none";
     if(origin == "version_history"){
       version_history_open();
-    }else{
+    }else if(reason == "newflyin"){
       flyin_open(content, type);
     }
   }, timeout_duration);
@@ -96,6 +98,7 @@ function version_history_open(evt){
       version_history_close_button.addEventListener("click", version_history_close); //Experimentell: muss neu definiert werden
       version_history_info_button.addEventListener("click", version_history_info_open); //Experimentell: muss neu definiert werden
       version_history_grid_container.style.display = "grid";
+      version_history_grid_container.classList = "version_history_grid_container_open";
       body.style.overflow = "hidden";
       version_history_container.classList = "";
       version_history_container.classList.add("version_history_opened");
@@ -108,10 +111,10 @@ function version_history_open(evt){
 }
 
 function version_history_close(){
-  console.log("close");
   flyin = false;
     body.style.overflow = "unset";
     version_history_grid_container.style.overflow = "hidden";
+    version_history_grid_container.classList = "version_history_grid_container_close";
     version_history_container.classList = "";
     version_history_container.classList.add("version_history_closed");
 
