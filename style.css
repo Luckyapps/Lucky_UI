@@ -6,6 +6,10 @@ html{
     /*font-family: calibri;*/
 }
 
+button{
+  cursor:pointer;
+}
+
 body{
     margin:0;
 }
