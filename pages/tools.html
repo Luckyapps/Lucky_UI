@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bestlist --> Tools</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../style.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/version_history.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/titlebar.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/content.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/error.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/sidecard.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/cookies.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/darkmode.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/update_notification/update_notification.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="stylesheets/tools/tools.css">
+    </head>
+    <body>
+        <script src="../style.js"></script>
+        <script src="../stylesheets/version_history.js"></script>
+        <script src="../stylesheets/titlebar.js"></script>
+        <script src="../stylesheets/content.js"></script>
+        <script src="../stylesheets/error.js"></script>
+        <script src="../stylesheets/sidecard.js"></script>
+        <script src="../stylesheets/cookies.js"></script>
+        <script src="../stylesheets/darkmode.js"></script>
+        <script src="stylesheets/tools/tools.js"></script>
+
+        <div id="blende"></div><!--Blende-->
+
+        <!--Titlebar-->
+        <div id="titlebar">
+            <a href="../index.html">Home</a>
+            <a href="scroll.html">Scroll</a>
+            <img src="../media/logo.png"></img>
+            <a href="">Tools</a>
+            <a href="">Seite3</a>
+        </div>
+        <div id="settings">
+        <img id="darkmode_button" src="../media/Theme_Symbol.png"></img><!--Darkmode-->
+        </div>
+
+        <!--Sidecard-->
+        <img src="../media/burger.svg" class="sidecard_but"></img>
+        <div class="sidecard">
+            <div class="sidecard_but_close">X</div>
+            <img src="../media/logo.png"></img>
+            <a href="../index.html">Home</a>
+            <a href="scroll.html">Scroll</a>
+            <a href="">Tools</a>
+            <a href="">Statistik</a>
+        </div>
+
+        <!--Content-->
+        <div id="content">
+            <div class="card card_100" style="text-align: center;">
+                <h1>Tools</h1>
+                <p>Unter Tools finden sich verschiedene einfache Funktionen</p>
+            </div>
+            <div class="card card_100">
+                <h2>Geolocation</h2>
+                <p>Hier kann die aktuelle Position des Gerätes abgefragt werden.</p>
+                <button onclick="get_geo('current')">Current</button>
+                <button onclick="get_geo('watch')">Watch</button>
+                <button onclick="get_geo('watch_clear')">ClearWatch</button>
+                <p id="geo_ausgabe"></p>
+            </div>
+        </div>
+
+        <!--Kompatibilitätsmodus-->
+        <div id="compatibility_mode">Kompatibilitätsmodus</div>
+
+        <!--cookies-->
+        <div class="cookie_container_hide" id="cookie_container">
+            <div  id="cookie_content">
+            <h3>Cookies</h3>
+            <div>Bei Nutzung der Website stimmen Sie zu, dass die Website notwendige technische Nutzerdaten (z.B. Darkmode-Einstellungen, Cookieauswahl) lokal im Browser speichert.</div>
+            <div id="cookie_selection">
+                <div id="cookies_close" onclick="cookie_content_close()">Fortfahren</div>
+            </div>
+            <div></div>
+            </div>
+        </div>        
+
+        <!--Error-->
+        <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
+    </body>
+</html>

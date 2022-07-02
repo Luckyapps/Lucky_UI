@@ -24,7 +24,7 @@ section{
 
 .scroll_elem{
     position: relative;
-    left: -50%;
+    transform: translate(-100%, 0%);
 }
 
 .scroll_elem2{

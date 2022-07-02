@@ -15,23 +15,26 @@ function start(){
 function onscroll(evt){
     scroll_ = Math.round(window.scrollY);
     //box_top = get_Style(box, "top", "int");
-    if(scroll_ > 300){
-    }
     start_evt(sec5, 100, 300, "opa", 1);
+    start_evt(document.getElementById("scroll_1"), 0, 200, "movein_transl", 0);
 }
 
 function start_evt(elem, start, end, type, goal_val, settings){
     var diff = end - start;
-    //console.log(diff);
     var unit = diff/100;
-    //console.log(unit);
     if((scroll_ > start) && (scroll_ < end)){
         var faktor = ((scroll_- start)/diff);
-        console.log(faktor);
+        //console.log(faktor);
         if(type == "opa"){
             elem.style.opacity = faktor * goal_val;
-        }else if(type == "move"){
-
+        }else if(type == "movein_transl"){
+            elem.style.transform = "translate(-"+ ((1 - faktor) * (goal_val + 100)) +"%,0)"; 
+        }
+    }else if(scroll_ > end){
+        if(type == "opa"){
+            elem.style.opacity = goal_val;
+        }else if(type == "movein_transl"){
+            elem.style.transform = "translate("+ goal_val +"%,0)";
         }
     }
 }
