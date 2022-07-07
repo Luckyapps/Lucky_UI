@@ -1,3 +1,7 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.darkmode.enabled){load_darkmode_stylesheet()}});
+
+if(lucky_ui_core.modules.darkmode.enabled){load_darkmode_stylesheet()};load_check();
+
 var darkmode_button;
 
 function load_darkmode_stylesheet(){

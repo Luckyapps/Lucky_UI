@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow: hidden;">
   <head>
     <meta charset="utf-8">
     <html lang="de-de">
@@ -11,18 +11,18 @@
     <meta name="description" content="Put your description here."><!-- Beschreibung der Seite für die Google Suche-->
     <title>Lucky UI</title>  <!-- Tab titel -->
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/version_history.css" rel="stylesheet" type="text/css" />
+    <!--<link href="stylesheets/version_history.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/titlebar.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/content.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/error.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/sidecard.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/cookies.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/darkmode.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/update_notification/update_notification.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/update_notification/update_notification.css" rel="stylesheet" type="text/css" />-->
   </head>
   <body>
-    <script src="style.js"></script>
-    <script src="stylesheets/version_history.js"></script>
+    <script src="lucky_ui_core.js"></script>
+    <!--<script src="stylesheets/version_history.js"></script>
     <script src="stylesheets/titlebar.js"></script>
     <script src="stylesheets/content.js"></script>
     <script src="stylesheets/error.js"></script>
@@ -30,7 +30,9 @@
     <script src="stylesheets/cookies.js"></script>
     <script src="stylesheets/darkmode.js"></script>
     <script src="stylesheets/update_notification/update_notification.js"></script>
-    <script src="stylesheets/update_notification/updatelist.js"></script>
+    <script src="stylesheets/update_notification/updatelist.js"></script>-->
+
+    <div id="wall" style="position:fixed; top:0; width: 100%;height: 100%; background: #202124; z-index: 999; overflow: hidden;"></div>
 
     <div id="blende"></div><!--Blende-->
 
@@ -104,12 +106,18 @@
     <div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>
 
     <!--Version_History and Watermark-->
-    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22063.0</div>
+    <div title="Versionsinformation" id="watermark">App by <a href="">Luckyapps</a> | dvc.1.22071.0</div>
     <div id="version_history_grid_container">
       <div id="version_history_container" class="version_history_closed_FIRST">
         <h2>Versionen:</h2>
         <div>
-          <h3>dvc.1.22063.0</h3>
+          <h3>dvc.1.22071.0</h3>
+          <ul>
+            <li>Lucky_UI Core wurde eingeführt. <ul><li>Zur Nutzung von Lucky_UI muss nun nur noch das lucky_ui_core.js script in die Website integriert werden. </li><li>lucky_ui_core enthält u.a. die Möglichkeit bestimmte Lucky_UI Module zu deaktivieren.</li><li>Alle benötigten Dateien werden automatisch integriert.</li><li>Da die Seite sich durch lucky_ui_core langsamer aufbaut, gibt es einen kurzen Ladebildschirm.</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>dv.1.22063.0</h3>
           <ul>
             <li>Erster nutzbarer Ansatz für ein Scrollrespnives Design.</li>
             <li>Neuer Abschnitt: Tools <ul><li>Unter Tools werden sich Funktionen befinden, mit denen man realtiv einfach verschiedene Daten aus dem Browser abfragen kann. Z.B Geolocation Daten.</li></ul></li>

@@ -1,3 +1,6 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.error.enabled){load_error_stylesheet()}});
+if(lucky_ui_core.modules.error.enabled){load_error_stylesheet()};load_check();
+
 var error_container;
 
 function load_error_stylesheet(){

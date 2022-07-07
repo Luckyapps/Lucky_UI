@@ -1,3 +1,6 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.version_history.enabled){load_version_history_stylesheet()}});
+if(lucky_ui_core.modules.version_history.enabled){load_version_history_stylesheet()};load_check();
+
 var watermark,body, version_history_container,version_history_grid_container, version_history_close_button, version_history_info_button, version_history_innerHTML, flyin, version_history_info_content;
 
 function load_version_history_stylesheet(){

@@ -1,3 +1,7 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.content.enabled){load_content_stylesheet()}});
+
+if(lucky_ui_core.modules.content.enabled){load_content_stylesheet()}else{console.log("HAHAHA")}; load_check();
+
 var content, cards;
 
 function load_content_stylesheet(){

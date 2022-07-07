@@ -1,3 +1,6 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.sidecard.enabled){load_sidecard_stylesheet()}});
+if(lucky_ui_core.modules.sidecard.enabled){load_sidecard_stylesheet()};load_check();
+
 var sidecard_but, sidecard_but_close, sidecard;
 
 function load_sidecard_stylesheet(){

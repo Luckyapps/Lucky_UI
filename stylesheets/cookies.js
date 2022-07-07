@@ -1,3 +1,6 @@
+window.addEventListener("load", function () {if(lucky_ui_core.modules.cookie.enabled){load_cookie_stylesheet()}});
+if(lucky_ui_core.modules.cookie.enabled){load_cookie_stylesheet()};load_check();
+
 var cookie_container, cookie_content;
 
 function load_cookie_stylesheet(){

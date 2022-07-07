@@ -1,3 +1,5 @@
+if(lucky_ui_core.modules.update_notification.enabled){load_update_notification_stylesheet()}; load_check();
+
 var update_selected, update_notification, update_notification_container, update_notification_toolbar, update_notification_title, update_notification_close, update_notification_content;
 
 function load_update_notification_stylesheet(){
