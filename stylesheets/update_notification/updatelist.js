@@ -18,7 +18,7 @@ var updatelist = [{
     
 }]
 
-var template_XASLKJSDFÖLK = [{
+/*var template_XASLKJSDFÖLK = [{
     "id":[{
         "name":"1.XXXX.X",
         "description":"Hier steht die Beschreibung"
@@ -31,4 +31,4 @@ var template_XASLKJSDFÖLK = [{
         "name":"dvc 1.22063.0",
         "description":"<ul><li>Erster nutzbarer Ansatz für ein Scrollrespnives Design</li><li>Neuer Abschnitt: Tools <ul><li>Unter Tools werden sich Funktionen befinden, mit denen man realtiv einfach verschiedene Daten aus dem Browser abfragen kann. Z.B Geolocation Daten.</li></ul></li></ul>"
     }]
-}]
+}]*/
