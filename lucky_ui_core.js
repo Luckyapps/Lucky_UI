@@ -27,6 +27,7 @@ var lucky_ui_core = {
         },
         "error": {
             "enabled": true,
+            "html_embeded": true,
             "files": {
                 "js": ["https://luckyapps.github.io/Lucky_UI/stylesheets/error.js"],
                 "css": ["https://luckyapps.github.io/Lucky_UI/stylesheets/error.css"]
@@ -41,6 +42,8 @@ var lucky_ui_core = {
         },
         "cookie": {
             "enabled": true,
+            "html_embeded": true,
+            "cookie_content":"Bei Nutzung der Website stimmen Sie zu, dass die Website notwendige technische Nutzerdaten (z.B. Darkmode-Einstellungen, Cookieauswahl) lokal im Browser speichert.",
             "files": {
                 "js": ["https://luckyapps.github.io/Lucky_UI/stylesheets/cookies.js"],
                 "css": ["https://luckyapps.github.io/Lucky_UI/stylesheets/cookies.css"]
@@ -188,6 +191,16 @@ function cssLoader(file){
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+function createHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+  
+    // Change this to div.childNodes to support multiple top-level nodes.
+    return div.firstChild;
+  }
+
