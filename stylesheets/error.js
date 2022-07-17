@@ -1,4 +1,8 @@
 window.addEventListener("load", function () {if(lucky_ui_core.modules.error.enabled){load_error_stylesheet()}});
+if(lucky_ui_core.modules.error.html_embeded){
+    document.body.appendChild(createHTML('<div class="error_style_container"><div id="error_container" class="error_hidden"></div></div>'));
+    console.log("embed");
+}
 if(lucky_ui_core.modules.error.enabled){load_error_stylesheet()};load_check();
 
 var error_container;
