@@ -1,8 +1,15 @@
 window.addEventListener("load", load_lucky_ui_core);
 
+window.addEventListener("error", on_error);
+
+function on_error(evt){
+    console.log(evt);
+}
+
 //if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').then(function(registration){registration.update()})}; //experimenteller Offlinemodus
 
 var lucky_ui_core = {
+    "loaded": false,
     "modules":{
         "titlebar": {
             "enabled": true,
@@ -107,6 +114,12 @@ async function load_lucky_ui_core(){
     }else{
         console.warn("DEVELOPMENT MODE");
 
+        for(i=0;  i < Object.keys(lucky_ui_core.modules).length; i++){
+            if(lucky_ui_core.modules[Object.keys(lucky_ui_core.modules)[i]].enabled){
+                loaded_modules_count++;
+            }
+        }
+        
         cssLoader("style.css");
         cssLoader("stylesheets/version_history.css");
         cssLoader("stylesheets/titlebar.css");
@@ -126,12 +139,6 @@ async function load_lucky_ui_core(){
         scriptLoader("stylesheets/darkmode.js");
         scriptLoader("stylesheets/update_notification/updatelist.js");
         scriptLoader("stylesheets/update_notification/update_notification.js");
-
-        for(i=0;  i < Object.keys(lucky_ui_core.modules).length; i++){
-            if(lucky_ui_core.modules[Object.keys(lucky_ui_core.modules)[i]].enabled){
-                loaded_modules_count++;
-            }
-        }
     }
 
     setTimeout(function () { //BUGFIX: Scroll ist nicht oben 
@@ -139,12 +146,18 @@ async function load_lucky_ui_core(){
     }, 10);
 }
 
-function load_check(){
-    load_status++
-    if(load_status == (loaded_modules_count -2)){
+async function load_check(){
+    load_status++;
+    document.getElementById("bar").style.width = (100/loaded_modules_count ) * load_status +"%";
+    await sleep(parseFloat(window.getComputedStyle(document.getElementById("bar")).getPropertyValue("transition-Duration"))*1000);
+    if(load_status == (loaded_modules_count /*-2*/)){
         document.getElementById("wall").style.display = "none";
         document.getElementsByTagName('html')[0].style.overflow = "";
-        console.warn("Fertig geladen");
+        if(lucky_ui_core.loaded){
+        }else{
+            lucky_ui_core.loaded = true;
+            console.warn("Fertig geladen");
+        }
     }
 }
 
@@ -178,6 +191,11 @@ function cssLoader(file){
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function createHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
@@ -185,3 +203,4 @@ function createHTML(htmlString) {
     // Change this to div.childNodes to support multiple top-level nodes.
     return div.firstChild;
   }
+
