@@ -23,7 +23,7 @@
     grid-column: 1 / span4; /*Werte: [von] / span[bis einschließlich]*/
 }
 
-@media screen and (max-width: 650px) { /*Wenn die Displaybreite kleiner als 650px*/
+@media screen and (max-width: 920px) { /*Wenn die Displaybreite kleiner als 920px*/
     #content{
         grid-template-columns: 100% !important;
     }
